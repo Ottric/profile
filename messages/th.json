@@ -1,0 +1,16 @@
+{
+  "HomePage": {
+    "title": "เพื่อเริ่มต้น แก้ไขไฟล์ page.tsx",
+    "description": "กำลังมองหาจุดเริ่มต้นหรือคำแนะนำเพิ่มเติม? ไปที่ {templates} หรือศูนย์ {learning}",
+    "templates": "เทมเพลต",
+    "learning": "การเรียนรู้",
+    "deployNow": "เริ่มใช้งานทันที",
+    "documentation": "เอกสารประกอบ"
+  },
+  "Header": {
+    "Home": "หน้าแรก",
+    "Certificate": "ใบรับรอง",
+    "Documentation": "เอกสารประกอบ",
+    "About": "เกี่ยวกับ"
+  }
+}
