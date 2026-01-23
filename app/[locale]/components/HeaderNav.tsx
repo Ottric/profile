@@ -22,7 +22,7 @@ export function HeaderNav() {
     { href: "/", label: t("Home"), key: "home" },
     { href: "/certificate", label: t("Certificate"), key: "certificate" },
     { href: "/documentation", label: t("Documentation"), key: "documentation" },
-    { href: "/seakeen", label: "SAKEEN", key: "seakeen" },
+    { href: "/seakeen", label: "SEAKEEN", key: "seakeen" },
     { href: "/about", label: t("About"), key: "about" },
   ];
 
@@ -93,9 +93,7 @@ export function HeaderNav() {
                             data-active={isActive}
                             className={cn(
                               'focus-visible:ring-ring/50 [&_svg:not([class*="text-"])]:text-muted-foreground group bg-background hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground before:bg-primary relative inline-flex h-10 w-max cursor-pointer flex-col items-center justify-center gap-1 rounded-t-[calc(var(--radius)-10px)] p-2 px-4 py-2 text-sm font-bold transition-colors outline-none before:absolute before:right-0 before:bottom-0 before:left-0 before:h-0.5 before:transition-transform before:duration-300 hover:before:scale-x-100 focus:outline-none focus-visible:ring-[3px] focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50 [&_svg:not([class*="size-"])]:size-4',
-                              isActive
-                                ? "data-active:bg-accent/50 data-active:text-accent-foreground text-primary before:scale-x-100"
-                                : "before:scale-x-0"
+                              isActive ? "data-active:bg-accent/50 text-primary before:scale-x-100" : "before:scale-x-0"
                             )}
                             data-slot="navigation-menu-link"
                             data-radix-collection-item=""

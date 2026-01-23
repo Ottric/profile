@@ -1,6 +1,6 @@
 "use client";
 
-import { getCookie, setCookie } from "cookies-next";
+import { setCookie } from "cookies-next";
 import { Moon, SunMedium } from "lucide-react";
 
 import { useEffect, useState } from "react";
@@ -35,7 +35,7 @@ export function ToggleTheme() {
 
   return (
     <Button onClick={toggleTheme} variant="outline">
-      {getCookie("theme") === "light" ? <SunMedium /> : <Moon />}
+      {theme === "light" ? <SunMedium /> : <Moon />}
     </Button>
   );
 }

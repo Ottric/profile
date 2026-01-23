@@ -1,6 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 
+import { FooterNav } from "./components/FooterNav";
 import { HeaderNav } from "./components/HeaderNav";
 import { HomeDescription } from "./components/HomeDescription";
 
@@ -10,9 +11,9 @@ export default async function Home() {
   return (
     <>
       <HeaderNav />
-      <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-        <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between bg-white px-16 py-32 sm:items-start dark:bg-black">
-          <div className="flex w-full items-center justify-between">
+      <div className="flex min-h-screen items-center justify-center bg-zinc-100 font-sans dark:bg-black">
+        <main className="my-6 flex min-h-screen w-full max-w-3xl flex-col items-center justify-between bg-white px-16 py-32 sm:items-start dark:bg-black">
+          {/* <div className="flex w-full items-center justify-between">
             <Image className="dark:invert" src="/next.svg" alt="Next.js logo" width={100} height={20} priority />
           </div>
           <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
@@ -39,9 +40,10 @@ export default async function Home() {
             >
               {t("documentation")}
             </a>
-          </div>
+          </div> */}
         </main>
       </div>
+      <FooterNav />
     </>
   );
 }
