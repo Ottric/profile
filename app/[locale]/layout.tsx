@@ -1,16 +1,40 @@
 import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
+import { Geist } from "next/font/google";
 import localFonts from "next/font/local";
+import { cookies } from "next/headers";
 import { notFound } from "next/navigation";
 
+import { BackgroundPaths } from "@/components/ui/paths";
 import { routing } from "@/i18n/routing";
 
 import { LocaleHtml } from "./components/LocaleHtml";
 
 const cloudLoop = localFonts({
-  src: "./font/CloudLoop-Regular.otf",
+  src: [
+    {
+      path: "./font/Cloud-Light.otf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "./font/CloudLoop-Regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./font/Cloud-Bold.otf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
   variable: "--font-cloud-loop",
+});
+
+const geist = Geist({
+  subsets: ["latin"],
+  variable: "--font-geist-sans",
 });
 
 export const metadata: Metadata = {
@@ -32,13 +56,17 @@ export default async function LocaleLayout({
     notFound();
   }
 
+  const cookieStore = await cookies();
+  const theme = cookieStore.get("theme")?.value ?? "light";
+
   // Providing all messages to the client
   // side is the easiest way to get started
   const messages = await getMessages();
 
   return (
-    <div className={`${cloudLoop.variable} antialiased`}>
-      <LocaleHtml locale={locale} />
+    <div>
+      <LocaleHtml locale={locale} fontVariable={`${cloudLoop.variable} ${geist.variable}`} theme={theme} />
+      <BackgroundPaths />
       <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
     </div>
   );
