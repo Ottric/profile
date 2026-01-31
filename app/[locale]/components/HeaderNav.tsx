@@ -12,6 +12,7 @@ import { Link } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
 
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import { OttricLogo } from "./OttricLogo";
 import { ToggleTheme } from "./ToggleTheme";
 
 export function HeaderNav() {
@@ -27,10 +28,10 @@ export function HeaderNav() {
   ];
 
   return (
-    <div className="relative w-full">
-      <header className="bg-background/95 supports-backdrop-filter:bg-background/60 sticky top-0 z-50 w-full border-b px-4 backdrop-blur md:px-6">
+    <div className="sticky top-0 z-50 w-full">
+      <header className="bg-background sticky top-0 w-full border-b px-4 md:px-6">
         <div className="container mx-auto flex h-18 max-w-screen-2xl items-center justify-between gap-4">
-          <div className="flex items-center gap-8">
+          <div className="flex items-center gap-2 lg:gap-4">
             {useIsMobile() && (
               <Drawer direction="left">
                 <DrawerTrigger asChild>
@@ -40,7 +41,9 @@ export function HeaderNav() {
                 </DrawerTrigger>
                 <DrawerContent className="p-0">
                   <DrawerHeader className="border-b px-6 py-4">
-                    <DrawerTitle className="text-2xl font-black">Ottric</DrawerTitle>
+                    <DrawerTitle>
+                      <OttricLogo className="text-5xl" />
+                    </DrawerTitle>
                   </DrawerHeader>
                   <nav className="flex flex-col p-4">
                     <ul className="flex flex-col gap-2">
@@ -52,8 +55,8 @@ export function HeaderNav() {
                               <Link
                                 href={item.href}
                                 className={cn(
-                                  "hover:bg-accent hover:text-accent-foreground flex items-center rounded-md px-4 py-3 text-base font-medium transition-colors",
-                                  isActive ? "bg-accent/50 text-primary font-bold" : "text-foreground"
+                                  "hover:bg-accent hover:text-accent-foreground flex items-center rounded-md px-4 py-3 text-base font-bold transition-colors",
+                                  isActive ? "bg-accent/50 text-primary" : "text-foreground"
                                 )}
                               >
                                 {item.label}
@@ -67,7 +70,7 @@ export function HeaderNav() {
                 </DrawerContent>
               </Drawer>
             )}
-            <h1 className="text-5xl font-black">Ottric</h1>
+            <OttricLogo className="text-[clamp(1rem,10vw,3rem)]" />
             {!useIsMobile() && (
               <nav
                 aria-label="Main"
@@ -109,7 +112,7 @@ export function HeaderNav() {
               </nav>
             )}
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 lg:gap-4">
             <LanguageSwitcher />
             <ToggleTheme />
           </div>
