@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 function FloatingPaths({ position }: { position: number }) {
   const paths = useMemo(
     () =>
-      Array.from({ length: 28 }, (_, i) => ({
+      Array.from({ length: 38 }, (_, i) => ({
         id: i,
         d: `M-${380 - i * 5 * position} -${189 + i * 6}C-${
           380 - i * 5 * position
@@ -65,7 +65,7 @@ export function BackgroundPaths({ className, children }: BackgroundPathsProps) {
   return (
     <div className={cn("text-primary bg-background fixed inset-0 overflow-hidden", className)}>
       {/* Mirrored path sets for symmetry */}
-      <FloatingPaths position={1} />
+      {/* <FloatingPaths position={1} /> */}
       <FloatingPaths position={-1} />
 
       {/* Subtle center glow */}

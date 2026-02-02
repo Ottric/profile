@@ -1,7 +1,10 @@
+import { SquareArrowOutUpRight } from "lucide-react";
+
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardAction,
@@ -15,47 +18,54 @@ import {
 import { CertificateImageDialog } from "./CertificateImageDialog";
 
 export async function GridCer() {
+  const t = await getTranslations("Certificate");
   const cerItem = [
     {
       path: "/image/GDSC_basicLinux101.png",
+      pdf: "/pdf/GDSC_basicLinux101.pdf",
       alt: "GDSC - Basic Linux 101",
       by: "Google Developer Student Clubs",
-      desc: "A beginner's guide to using Shell scripting and basic Linux commands.",
+      desc: t("GDSC_Linux"),
       date: "Jan. 2024",
     },
     {
       path: "/image/GDSC_react101.png",
+      pdf: "/pdf/GDSC_react101.pdf",
       alt: "GDSC - React 101",
       by: "Google Developer Student Clubs",
-      desc: "A beginner's guide to React, covering the fundamentals of building user interfaces.",
+      desc: t("GDSC_react"),
       date: "Jan. 2024",
     },
     {
       path: "/image/GDSC_figma101.png",
+      pdf: "/pdf/GDSC_figma101.pdf",
       alt: "GDSC - Figma 101",
       by: "Google Developer Student Clubs",
-      desc: "A beginner's guide to Figma, covering the basics of UI/UX design.",
+      desc: t("GDSC_figma"),
       date: "Feb. 2024",
     },
     {
       path: "/image/CCNA_Intro_to_Networks.png",
+      pdf: "/pdf/CCNA_Intro_to_Networks.pdf",
       alt: "CCNA - Introduction to Networks",
       by: "Cisco Networking Academy",
-      desc: "An introduction to networking concepts, protocols, and technologies.",
+      desc: t("CCNA_intro"),
       date: "Feb. 2024",
     },
     {
       path: "/image/CCNA_Switching_Routing_and_Wireless_Essentials.png",
+      pdf: "/pdf/CCNA_Switching_Routing_and_Wireless_Essentials.pdf",
       alt: "CCNA - Switching, Routing, and Wireless Essentials",
       by: "Cisco Networking Academy",
-      desc: "A comprehensive course on switching, routing, and wireless networking essentials.",
+      desc: t("CCNA_switch"),
       date: "Feb. 2024",
     },
     {
       path: "/image/Letter-NSTDA-NECTEC.png",
+      pdf: "/pdf/Letter-NSTDA-NECTEC.pdf",
       alt: "Internship - NECTEC NSTDA Traffy Team",
       by: "NECTEC NSTDA",
-      desc: "A letter of recommendation for my internship at NECTEC NSTDA Traffy Team.",
+      desc: t("NSTDA_intrenship"),
       date: "May. 2025",
     },
   ];
@@ -68,8 +78,10 @@ export async function GridCer() {
               <Image src={item.path} alt={item.alt} fill className="object-cover object-top" />
             </CardHeader>
           </CertificateImageDialog>
-          <div className="mx-3 flex items-center justify-between">
-            <Badge className="line-clamp-1 max-w-[60%] truncate">{item.by}</Badge>
+          <div className="mx-5 flex items-center justify-between">
+            <Badge className="max-w-[60%]">
+              <p className="line-clamp-1 translate-y-px truncate">{item.by}</p>
+            </Badge>
             <p className="text-muted-foreground">{item.date}</p>
           </div>
           <CardContent>
@@ -77,7 +89,17 @@ export async function GridCer() {
             <CardDescription className="mt-1.5">{item.desc}</CardDescription>
           </CardContent>
           <CardFooter className="absolute bottom-6 w-full px-6">
-            <CardAction>View Certificate</CardAction>
+            <CardAction>
+              <Button
+                asChild
+                className="bg-foreground text-background hover:bg-accent hover:text-accent-foreground rounded-[0.6rem]"
+                size="sm"
+              >
+                <a href={item.pdf} target="_blank" rel="noopener noreferrer">
+                  <p className="translate-y-0.5">View PDF</p> <SquareArrowOutUpRight />
+                </a>
+              </Button>
+            </CardAction>
           </CardFooter>
         </Card>
       ))}

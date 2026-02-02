@@ -44,6 +44,14 @@
     "web": "Web Technologies: HTML, CSS",
     "databases": "Databases: SQL"
   },
+  "Certificate": {
+    "GDSC_Linux": "A beginner's guide to using Shell scripting and basic Linux commands.",
+    "GDSC_react": "A beginner's guide to React, covering the fundamentals of building user interfaces",
+    "GDSC_figma": "A beginner's guide to Figma, covering the basics of UI/UX design.",
+    "CCNA_intro": "An introduction to networking concepts, protocols, and technologies.",
+    "CCNA_switch": "A comprehensive course on switching, routing, and wireless networking essentials.",
+    "NSTDA_intrenship": "A letter of recommendation for my internship at NECTEC NSTDA Traffy Team."
+  },
   "About": {
     "sec_1": "I am a Computer Engineering graduate with a strong passion for web application and backend development. I enjoy building systems that are reliable, maintainable, and scalable, and I am comfortable working with both development and server-side environments.",
     "sec_2": "I develop web applications and backend systems using modern technologies such as TypeScript, Node.js, and SQL databases, and I have hands-on experience deploying and configuring services on Linux servers.\nI am particularly interested in backend logic, system integration, and infrastructure that supports real-world applications.",
