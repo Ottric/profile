@@ -43,6 +43,8 @@ export const metadata: Metadata = {
   description: "About Patcharapon Tappakwan",
 };
 
+export const runtime = "edge";
+
 export default async function LocaleLayout({
   children,
   params,
