@@ -7,6 +7,8 @@ const ai = new GoogleGenAI({ apiKey: process.env.GOOGLE_API_KEY! });
 const sea_spreadsheetId = "1R3wdeEYZJc9VTkJhHPmbwucHLt3fjPGc-NoY8Vpw2Vc";
 const keen_spreadsheetId = "1iBdJDTugA0QKXSSVCxJvEgqaGal-vHWenu8HhUFdUbk";
 
+export const runtime = "edge";
+
 export async function GET(request: NextRequest) {
   const sea_uri = `https://docs.google.com/spreadsheets/d/${sea_spreadsheetId}/export?format=csv`;
   const keen_uri = `https://docs.google.com/spreadsheets/d/${keen_spreadsheetId}/export?format=pdf`;
