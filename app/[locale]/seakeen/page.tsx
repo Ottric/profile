@@ -62,7 +62,7 @@ interface ScheduleData {
 }
 
 export default async function SeaKeenPage() {
-  const scheduleData: ScheduleData = await fetch("http://localhost:3000/api/seakeen-ai-schedule", {
+  const scheduleData: ScheduleData = await fetch(`${process.env.WEBSITE_URL}/api/seakeen-ai-schedule`, {
     method: "GET",
     cache: "force-cache",
     next: { revalidate: 86400 },
