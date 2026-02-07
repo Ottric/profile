@@ -80,7 +80,7 @@ export async function GridCer() {
           </CertificateImageDialog>
           <div className="mx-5 flex items-center justify-between">
             <Badge className="max-w-[60%]">
-              <p className="line-clamp-1 translate-y-px truncate">{item.by}</p>
+              <p className="line-clamp-1 truncate">{item.by}</p>
             </Badge>
             <p className="text-muted-foreground">{item.date}</p>
           </div>
@@ -96,7 +96,7 @@ export async function GridCer() {
                 size="sm"
               >
                 <a href={item.pdf} target="_blank" rel="noopener noreferrer">
-                  <p className="translate-y-0.5">View PDF</p> <SquareArrowOutUpRight />
+                  <p className="font-medium">View PDF</p> <SquareArrowOutUpRight />
                 </a>
               </Button>
             </CardAction>

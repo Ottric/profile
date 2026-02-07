@@ -1,12 +1,8 @@
-import { getTranslations } from "next-intl/server";
-
 import { FooterNav } from "./components/FooterNav";
 import { HeaderNav } from "./components/HeaderNav";
 import { Resume } from "./components/Resume";
 
-export default async function Home() {
-  const t = await getTranslations("HomePage");
-
+export default function Home() {
   return (
     <>
       <HeaderNav />

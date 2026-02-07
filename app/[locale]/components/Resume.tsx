@@ -1,5 +1,7 @@
 import { getTranslations } from "next-intl/server";
 
+import { Separator } from "@/components/ui/separator";
+
 export async function Resume() {
   const t = await getTranslations("Resume");
 
@@ -43,10 +45,11 @@ export async function Resume() {
 
   return (
     <>
-      <div className="border-foreground mb-4 w-full border-b-2 pb-1 text-justify wrap-break-word hyphens-auto [text-justify:inter-character]">
+      <div className="w-full pb-1 text-justify wrap-break-word hyphens-auto [text-justify:inter-character]">
         <h1 className="text-2xl font-bold">Patcharapon Tappakwan</h1>
         <p className="text-foreground/50 text-xl italic">พชรพล ทัพผักแว่น</p>
       </div>
+      <Separator className="bg-foreground mb-4" />
       <div className="mb-4 w-full pb-1 text-justify wrap-break-word hyphens-auto [text-justify:inter-character]">
         <h2 className="mb-1 border-b-2 text-xl font-bold">{informationText}</h2>
         <p>{addressText}</p>

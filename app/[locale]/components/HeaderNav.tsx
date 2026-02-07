@@ -18,6 +18,7 @@ import { ToggleTheme } from "./ToggleTheme";
 export function HeaderNav() {
   const t = useTranslations("Header");
   const pathname = usePathname();
+  const isMobile = useIsMobile();
 
   const navItems = [
     { href: "/", label: t("Home"), key: "home" },
@@ -32,7 +33,7 @@ export function HeaderNav() {
       <header className="bg-background sticky top-0 w-full border-b px-4 md:px-6">
         <div className="container mx-auto flex h-18 max-w-screen-2xl items-center justify-between gap-4">
           <div className="flex items-center gap-2 lg:gap-4">
-            {useIsMobile() && (
+            {isMobile && (
               <Drawer direction="left">
                 <DrawerTrigger asChild>
                   <Button size="icon" variant="outline">
@@ -71,7 +72,7 @@ export function HeaderNav() {
               </Drawer>
             )}
             <OttricLogo className="text-[clamp(1rem,10vw,3rem)]" />
-            {!useIsMobile() && (
+            {!isMobile && (
               <nav
                 aria-label="Main"
                 data-orientation="horizontal"

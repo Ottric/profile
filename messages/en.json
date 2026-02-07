@@ -52,6 +52,9 @@
     "CCNA_switch": "A comprehensive course on switching, routing, and wireless networking essentials.",
     "NSTDA_intrenship": "A letter of recommendation for my internship at NECTEC NSTDA Traffy Team."
   },
+  "SEAKEEN": {
+    "description": "This page presents the schedule of events for Sea and Keen, generated using Google Gemini AI.\nThe data is primarily sourced from Google Sheets maintained by keenfanbase and seatalay_official.\nIf you find any errors or inaccuracies, feel free to blame Gemini AI as much as you like — it won't mind."
+  },
   "About": {
     "sec_1": "I am a Computer Engineering graduate with a strong passion for web application and backend development. I enjoy building systems that are reliable, maintainable, and scalable, and I am comfortable working with both development and server-side environments.",
     "sec_2": "I develop web applications and backend systems using modern technologies such as TypeScript, Node.js, and SQL databases, and I have hands-on experience deploying and configuring services on Linux servers.\nI am particularly interested in backend logic, system integration, and infrastructure that supports real-world applications.",

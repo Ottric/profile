@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
-import { Geist } from "next/font/google";
+import { Geist, Sarabun } from "next/font/google";
 import localFonts from "next/font/local";
 import { cookies } from "next/headers";
 import { notFound } from "next/navigation";
@@ -11,16 +11,11 @@ import { routing } from "@/i18n/routing";
 
 import { LocaleHtml } from "./components/LocaleHtml";
 
-const cloudLoop = localFonts({
+const cloud = localFonts({
   src: [
     {
       path: "./font/Cloud-Light.otf",
       weight: "300",
-      style: "normal",
-    },
-    {
-      path: "./font/CloudLoop-Regular.otf",
-      weight: "400",
       style: "normal",
     },
     {
@@ -29,12 +24,18 @@ const cloudLoop = localFonts({
       style: "normal",
     },
   ],
-  variable: "--font-cloud-loop",
+  variable: "--font-cloud-sans",
 });
 
 const geist = Geist({
   subsets: ["latin"],
   variable: "--font-geist-sans",
+});
+
+const sarabun = Sarabun({
+  subsets: ["latin", "latin-ext", "thai"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
+  variable: "--font-sarabun",
 });
 
 export const metadata: Metadata = {
@@ -65,7 +66,11 @@ export default async function LocaleLayout({
 
   return (
     <div>
-      <LocaleHtml locale={locale} fontVariable={`${cloudLoop.variable} ${geist.variable}`} theme={theme} />
+      <LocaleHtml
+        locale={locale}
+        fontVariable={`${cloud.variable} ${geist.variable} ${sarabun.variable}`}
+        theme={theme}
+      />
       <BackgroundPaths />
       <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
     </div>
